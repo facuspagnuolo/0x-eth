@@ -1,0 +1,9 @@
+{
+  "zosversion": "2",
+  "name": "0x-eth",
+  "version": "1.0.0",
+  "contracts": {
+    "LibEIP712": "LibEIP712",
+    "LibAbiEncoder": "LibAbiEncoder"
+  }
+}
