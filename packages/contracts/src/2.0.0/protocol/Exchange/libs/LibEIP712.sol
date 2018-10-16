@@ -19,7 +19,9 @@
 pragma solidity 0.4.24;
 
 
-contract LibEIP712 {
+import "zos-lib/contracts/Initializable.sol";
+
+contract LibEIP712 is Initializable {
 
     // EIP191 header for EIP712 prefix
     string constant internal EIP191_HEADER = "\x19\x01";
@@ -43,9 +45,7 @@ contract LibEIP712 {
     // solhint-disable-next-line var-name-mixedcase
     bytes32 public EIP712_DOMAIN_HASH;
 
-    constructor ()
-        public
-    {
+    function initialize() public initializer {
         EIP712_DOMAIN_HASH = keccak256(abi.encodePacked(
             EIP712_DOMAIN_SEPARATOR_SCHEMA_HASH,
             keccak256(bytes(EIP712_DOMAIN_NAME)),

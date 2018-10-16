@@ -1,6 +1,6 @@
 pragma solidity ^0.4.11;
 
-contract Token_v1 {
+contract IToken_v1 {
 
     /// @return total amount of tokens
     function totalSupply() constant returns (uint supply) {}
