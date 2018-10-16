@@ -1,0 +1,91 @@
+{
+  "contracts": {
+    "LibAbiEncoder": {
+      "address": "0x3a5a9b42a34a56deb4053266217e834d6f118cbd",
+      "constructorCode": "6080604052348015600f57600080fd5b50604380601d6000396000f300",
+      "bodyBytecodeHash": "a98ba9a311cf940f6e58ddbf3dce2f210e82d97466a417765ba674779434bb27",
+      "localBytecodeHash": "23cf8c079c982029a4a7e3ac9a7b4c2177d603d402b818ae44cf460b536d6fff",
+      "deployedBytecodeHash": "23cf8c079c982029a4a7e3ac9a7b4c2177d603d402b818ae44cf460b536d6fff",
+      "types": {},
+      "storage": [],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "LibEIP712": {
+      "address": "0xcd9e3d7b837a3709e626865f470032e8b3ef1f4e",
+      "constructorCode": "608060405234801561001057600080fd5b5061055f806100206000396000f300",
+      "bodyBytecodeHash": "44b0c9d4aa9d9745b319efe460dd291f4e9b6ecc0ba91e94ad9dcdfae50733b5",
+      "localBytecodeHash": "8b7c5b0359d1a049e6a597f75d19596569783a55b571451d3c947645b9e97e0c",
+      "deployedBytecodeHash": "8b7c5b0359d1a049e6a597f75d19596569783a55b571451d3c947645b9e97e0c",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 16561,
+          "type": "t_bool",
+          "src": "749:24:104"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 16563,
+          "type": "t_bool",
+          "src": "868:25:104"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 16612,
+          "type": "t_array:50<t_uint256>",
+          "src": "1883:29:104"
+        },
+        {
+          "contract": "LibEIP712",
+          "path": "contracts/2.0.0/protocol/Exchange/libs/LibEIP712.sol",
+          "label": "EIP712_DOMAIN_HASH",
+          "astId": 11849,
+          "type": "t_bytes32",
+          "src": "1365:33:62"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {},
+  "zosversion": "2",
+  "version": "1.0.0"
+}
