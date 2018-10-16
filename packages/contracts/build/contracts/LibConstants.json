@@ -1,0 +1,391 @@
+{
+  "contractName": "LibConstants",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ZRX_ASSET_DATA",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "zrxAssetData",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102a43803806102a4833981018060405281019080805182019291905050508060009080519060200190610049929190610050565b50506100f5565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061009157805160ff19168380011785556100bf565b828001600101855582156100bf579182015b828111156100be5782518255916020019190600101906100a3565b5b5090506100cc91906100d0565b5090565b6100f291905b808211156100ee5760008160009055506001016100d6565b5090565b90565b6101a0806101046000396000f300608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063db123b1a14610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016c5780601f106101415761010080835404028352916020019161016c565b820191906000526020600020905b81548152906001019060200180831161014f57829003601f168201915b5050505050815600a165627a7a723058200e628ef9dc20be890109fdaa5e56f3e82f70310824daedd17b7605fd1565a9000029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063db123b1a14610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016c5780601f106101415761010080835404028352916020019161016c565b820191906000526020600020905b81548152906001019060200180831161014f57829003601f168201915b5050505050815600a165627a7a723058200e628ef9dc20be890109fdaa5e56f3e82f70310824daedd17b7605fd1565a9000029",
+  "sourceMap": "641:1316:61:-;;;1850:105;8:9:-1;5:2;;;30:1;27;20:12;5:2;1850:105:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1936:12;1919:14;:29;;;;;;;;;;;;:::i;:::-;;1850:105;641:1316;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "641:1316:61:-;;;;;;;;;;;;;;;;;;;;;;;;1779:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1779:27:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1779:27:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "/*\n\n  Copyright 2018 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity 0.4.24;\n\n\n// solhint-disable max-line-length\ncontract LibConstants {\n   \n    // Asset data for ZRX token. Used for fee transfers.\n    // @TODO: Hardcode constant when we deploy. Currently \n    //        not constant to make testing easier.\n\n    // The proxyId for ZRX_ASSET_DATA is bytes4(keccak256(\"ERC20Token(address)\")) = 0xf47261b0\n    \n    // Kovan ZRX address is 0x6ff6c0ff1d68b964901f986d4c9fa3ac68346570.\n    // The ABI encoded proxyId and address is 0xf47261b00000000000000000000000006ff6c0ff1d68b964901f986d4c9fa3ac68346570\n    // bytes constant public ZRX_ASSET_DATA = \"\\xf4\\x72\\x61\\xb0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x6f\\xf6\\xc0\\xff\\x1d\\x68\\xb9\\x64\\x90\\x1f\\x98\\x6d\\x4c\\x9f\\xa3\\xac\\x68\\x34\\x65\\x70\";\n    \n    // Mainnet ZRX address is 0xe41d2489571d322189246dafa5ebde1f4699f498.\n    // The ABI encoded proxyId and address is 0xf47261b0000000000000000000000000e41d2489571d322189246dafa5ebde1f4699f498\n    // bytes constant public ZRX_ASSET_DATA = \"\\xf4\\x72\\x61\\xb0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xe4\\x1d\\x24\\x89\\x57\\x1d\\x32\\x21\\x89\\x24\\x6d\\xaf\\xa5\\xeb\\xde\\x1f\\x46\\x99\\xf4\\x98\";\n    \n    // solhint-disable-next-line var-name-mixedcase\n    bytes public ZRX_ASSET_DATA;\n\n    // @TODO: Remove when we deploy.\n    constructor (bytes memory zrxAssetData)\n        public\n    {\n        ZRX_ASSET_DATA = zrxAssetData;\n    }\n}\n// solhint-enable max-line-length\n",
+  "sourcePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/Exchange/libs/LibConstants.sol",
+  "ast": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/Exchange/libs/LibConstants.sol",
+    "exportedSymbols": {
+      "LibConstants": [
+        11821
+      ]
+    },
+    "id": 11822,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11808,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "580:23:61"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11821,
+        "linearizedBaseContracts": [
+          11821
+        ],
+        "name": "LibConstants",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11810,
+            "name": "ZRX_ASSET_DATA",
+            "nodeType": "VariableDeclaration",
+            "scope": 11821,
+            "src": "1779:27:61",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes_storage",
+              "typeString": "bytes"
+            },
+            "typeName": {
+              "id": 11809,
+              "name": "bytes",
+              "nodeType": "ElementaryTypeName",
+              "src": "1779:5:61",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes_storage_ptr",
+                "typeString": "bytes"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11819,
+              "nodeType": "Block",
+              "src": "1909:46:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11817,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11815,
+                      "name": "ZRX_ASSET_DATA",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11810,
+                      "src": "1919:14:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage",
+                        "typeString": "bytes storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 11816,
+                      "name": "zrxAssetData",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11812,
+                      "src": "1936:12:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_memory_ptr",
+                        "typeString": "bytes memory"
+                      }
+                    },
+                    "src": "1919:29:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage",
+                      "typeString": "bytes storage ref"
+                    }
+                  },
+                  "id": 11818,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1919:29:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11820,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11812,
+                  "name": "zrxAssetData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11820,
+                  "src": "1863:25:61",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 11811,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1863:5:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1862:27:61"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1909:0:61"
+            },
+            "scope": 11821,
+            "src": "1850:105:61",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11822,
+        "src": "641:1316:61"
+      }
+    ],
+    "src": "580:1412:61"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/Exchange/libs/LibConstants.sol",
+    "exportedSymbols": {
+      "LibConstants": [
+        11821
+      ]
+    },
+    "id": 11822,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11808,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "580:23:61"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 11821,
+        "linearizedBaseContracts": [
+          11821
+        ],
+        "name": "LibConstants",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11810,
+            "name": "ZRX_ASSET_DATA",
+            "nodeType": "VariableDeclaration",
+            "scope": 11821,
+            "src": "1779:27:61",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes_storage",
+              "typeString": "bytes"
+            },
+            "typeName": {
+              "id": 11809,
+              "name": "bytes",
+              "nodeType": "ElementaryTypeName",
+              "src": "1779:5:61",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes_storage_ptr",
+                "typeString": "bytes"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11819,
+              "nodeType": "Block",
+              "src": "1909:46:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 11817,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 11815,
+                      "name": "ZRX_ASSET_DATA",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11810,
+                      "src": "1919:14:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage",
+                        "typeString": "bytes storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 11816,
+                      "name": "zrxAssetData",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11812,
+                      "src": "1936:12:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_memory_ptr",
+                        "typeString": "bytes memory"
+                      }
+                    },
+                    "src": "1919:29:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage",
+                      "typeString": "bytes storage ref"
+                    }
+                  },
+                  "id": 11818,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1919:29:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 11820,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11812,
+                  "name": "zrxAssetData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11820,
+                  "src": "1863:25:61",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 11811,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1863:5:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1862:27:61"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 11814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1909:0:61"
+            },
+            "scope": 11821,
+            "src": "1850:105:61",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11822,
+        "src": "641:1316:61"
+      }
+    ],
+    "src": "580:1412:61"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-16T20:38:35.305Z"
+}

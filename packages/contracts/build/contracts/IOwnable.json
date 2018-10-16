@@ -1,0 +1,224 @@
+{
+  "contractName": "IOwnable",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.4.24;\n\n\ncontract IOwnable {\n\n    function transferOwnership(address newOwner)\n        public;\n}\n",
+  "sourcePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/utils/Ownable/IOwnable.sol",
+  "ast": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/utils/Ownable/IOwnable.sol",
+    "exportedSymbols": {
+      "IOwnable": [
+        16316
+      ]
+    },
+    "id": 16317,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16310,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:100"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 16316,
+        "linearizedBaseContracts": [
+          16316
+        ],
+        "name": "IOwnable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16315,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16313,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16312,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16315,
+                  "src": "78:16:100",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16311,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "78:7:100",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "77:18:100"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "110:0:100"
+            },
+            "scope": 16316,
+            "src": "51:60:100",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16317,
+        "src": "26:87:100"
+      }
+    ],
+    "src": "0:114:100"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/utils/Ownable/IOwnable.sol",
+    "exportedSymbols": {
+      "IOwnable": [
+        16316
+      ]
+    },
+    "id": 16317,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16310,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:100"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 16316,
+        "linearizedBaseContracts": [
+          16316
+        ],
+        "name": "IOwnable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16315,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16313,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16312,
+                  "name": "newOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16315,
+                  "src": "78:16:100",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16311,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "78:7:100",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "77:18:100"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16314,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "110:0:100"
+            },
+            "scope": 16316,
+            "src": "51:60:100",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16317,
+        "src": "26:87:100"
+      }
+    ],
+    "src": "0:114:100"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-16T20:38:35.411Z"
+}

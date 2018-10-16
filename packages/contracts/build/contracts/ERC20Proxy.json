@@ -1,0 +1,859 @@
+{
+  "contractName": "ERC20Proxy",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "name": "addAuthorizedAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "authorities",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "name": "removeAuthorizedAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "removeAuthorizedAddressAtIndex",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "authorized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAuthorizedAddresses",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "AuthorizedAddressAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "AuthorizedAddressRemoved",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getProxyId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506112c8806100536000396000f300608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806342f1181e14610262578063494503d4146102a557806370712939146103125780638da5cb5b146103555780639ad26744146103ac578063ae25532e146103f9578063b918161114610462578063d39de6e9146104bd578063f2fde38b14610529575b3480156100a557600080fd5b507fffffffff00000000000000000000000000000000000000000000000000000000600035167fa85e59e40000000000000000000000000000000000000000000000000000000081141561025d5760405173ffffffffffffffffffffffffffffffffffffffff331681526001602082015260408120541515610192577f08c379a0000000000000000000000000000000000000000000000000000000006000527c20000000000000000000000000000000000000000000000000000000006020527c1553454e4445525f4e4f545f415554484f52495a454400000000000000604052600060605260646000fd5b602860043501357f23b872dd0000000000000000000000000000000000000000000000000000000060005260606024600437602060006064600080855af1600080511160203d14163d15178116905080156101ec57600080f35b7f08c379a0000000000000000000000000000000000000000000000000000000006000527c20000000000000000000000000000000000000000000000000000000006020527c0f5452414e534645525f4641494c454400000000000000000000000000604052600060605260646000fd5b600080fd5b34801561026e57600080fd5b506102a3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056c565b005b3480156102b157600080fd5b506102d06004803603810190808035906020019092919050505061080c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561031e57600080fd5b50610353600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061084a565b005b34801561036157600080fd5b5061036a610bc1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103b857600080fd5b506103f7600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610be6565b005b34801561040557600080fd5b5061040e611022565b60405180827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200191505060405180910390f35b34801561046e57600080fd5b506104a3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061105f565b604051808215151515815260200191505060405180910390f35b3480156104c957600080fd5b506104d261107f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156105155780820151818401526020810190506104fa565b505050509050019250505060405180910390f35b34801561053557600080fd5b5061056a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061110d565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610630576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600160008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515156106f2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260198152602001807f5441524745545f414c52454144595f415554484f52495a45440000000000000081525060200191505060405180910390fd5b60018060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555060028190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f3147867c59d17e8fa9d522465651d44aae0a9e38f902f3475b97e58072f0ed4c60405160405180910390a350565b60028181548110151561081b57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610910576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615156109d1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f5441524745545f4e4f545f415554484f52495a4544000000000000000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81549060ff0219169055600090505b600280549050811015610b63578173ffffffffffffffffffffffffffffffffffffffff16600282815481101515610a5857fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610b56576002600160028054905003815481101515610ab657fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600282815481101515610af057fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600281818054905003915081610b50919061124b565b50610b63565b8080600101915050610a25565b3373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f1f32c1b084e2de0713b8fb16bd46bb9df710a3dbeae2f3ca93af46e016dcc6b060405160405180910390a35050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610caa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515610d6b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f5441524745545f4e4f545f415554484f52495a4544000000000000000000000081525060200191505060405180910390fd5b60028054905081101515610de7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f494e4445585f4f55545f4f465f424f554e44530000000000000000000000000081525060200191505060405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff16600282815481101515610e0d57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141515610ec3576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f415554484f52495a45445f414444524553535f4d49534d41544348000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81549060ff02191690556002600160028054905003815481101515610f2957fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600282815481101515610f6357fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600281818054905003915081610fc3919061124b565b503373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f1f32c1b084e2de0713b8fb16bd46bb9df710a3dbeae2f3ca93af46e016dcc6b060405160405180910390a35050565b600060405180807f4552433230546f6b656e2861646472657373290000000000000000000000000081525060130190506040518091039020905090565b60016020528060005260406000206000915054906101000a900460ff1681565b6060600280548060200260200160405190810160405280929190818152602001828054801561110357602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116110b9575b5050505050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156111d1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561124857806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b815481835581811115611272578183600052602060002091820191016112719190611277565b5b505050565b61129991905b8082111561129557600081600090555060010161127d565b5090565b905600a165627a7a723058209a4094b39e6803c41a4963fb96213db87f3333ddc072c2b6907f9f180f2290970029",
+  "deployedBytecode": "0x608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806342f1181e14610262578063494503d4146102a557806370712939146103125780638da5cb5b146103555780639ad26744146103ac578063ae25532e146103f9578063b918161114610462578063d39de6e9146104bd578063f2fde38b14610529575b3480156100a557600080fd5b507fffffffff00000000000000000000000000000000000000000000000000000000600035167fa85e59e40000000000000000000000000000000000000000000000000000000081141561025d5760405173ffffffffffffffffffffffffffffffffffffffff331681526001602082015260408120541515610192577f08c379a0000000000000000000000000000000000000000000000000000000006000527c20000000000000000000000000000000000000000000000000000000006020527c1553454e4445525f4e4f545f415554484f52495a454400000000000000604052600060605260646000fd5b602860043501357f23b872dd0000000000000000000000000000000000000000000000000000000060005260606024600437602060006064600080855af1600080511160203d14163d15178116905080156101ec57600080f35b7f08c379a0000000000000000000000000000000000000000000000000000000006000527c20000000000000000000000000000000000000000000000000000000006020527c0f5452414e534645525f4641494c454400000000000000000000000000604052600060605260646000fd5b600080fd5b34801561026e57600080fd5b506102a3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056c565b005b3480156102b157600080fd5b506102d06004803603810190808035906020019092919050505061080c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561031e57600080fd5b50610353600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061084a565b005b34801561036157600080fd5b5061036a610bc1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156103b857600080fd5b506103f7600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190505050610be6565b005b34801561040557600080fd5b5061040e611022565b60405180827bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19167bffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916815260200191505060405180910390f35b34801561046e57600080fd5b506104a3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061105f565b604051808215151515815260200191505060405180910390f35b3480156104c957600080fd5b506104d261107f565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156105155780820151818401526020810190506104fa565b505050509050019250505060405180910390f35b34801561053557600080fd5b5061056a600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061110d565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610630576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600160008273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515156106f2576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260198152602001807f5441524745545f414c52454144595f415554484f52495a45440000000000000081525060200191505060405180910390fd5b60018060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555060028190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550503373ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff167f3147867c59d17e8fa9d522465651d44aae0a9e38f902f3475b97e58072f0ed4c60405160405180910390a350565b60028181548110151561081b57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610910576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615156109d1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f5441524745545f4e4f545f415554484f52495a4544000000000000000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81549060ff0219169055600090505b600280549050811015610b63578173ffffffffffffffffffffffffffffffffffffffff16600282815481101515610a5857fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161415610b56576002600160028054905003815481101515610ab657fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600282815481101515610af057fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600281818054905003915081610b50919061124b565b50610b63565b8080600101915050610a25565b3373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f1f32c1b084e2de0713b8fb16bd46bb9df710a3dbeae2f3ca93af46e016dcc6b060405160405180910390a35050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141515610caa576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515610d6b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f5441524745545f4e4f545f415554484f52495a4544000000000000000000000081525060200191505060405180910390fd5b60028054905081101515610de7576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f494e4445585f4f55545f4f465f424f554e44530000000000000000000000000081525060200191505060405180910390fd5b8173ffffffffffffffffffffffffffffffffffffffff16600282815481101515610e0d57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16141515610ec3576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f415554484f52495a45445f414444524553535f4d49534d41544348000000000081525060200191505060405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81549060ff02191690556002600160028054905003815481101515610f2957fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600282815481101515610f6357fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001600281818054905003915081610fc3919061124b565b503373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff167f1f32c1b084e2de0713b8fb16bd46bb9df710a3dbeae2f3ca93af46e016dcc6b060405160405180910390a35050565b600060405180807f4552433230546f6b656e2861646472657373290000000000000000000000000081525060130190506040518091039020905090565b60016020528060005260406000206000915054906101000a900460ff1681565b6060600280548060200260200160405190810160405280929190818152602001828054801561110357602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116110b9575b5050505050905090565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156111d1576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260138152602001807f4f4e4c595f434f4e54524143545f4f574e45520000000000000000000000000081525060200191505060405180910390fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614151561124857806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b50565b815481835581811115611272578183600052602060002091820191016112719190611277565b5b505050565b61129991905b8082111561129557600081600090555060010161127d565b5090565b905600a165627a7a723058209a4094b39e6803c41a4963fb96213db87f3333ddc072c2b6907f9f180f2290970029",
+  "sourceMap": "641:8586:35:-;;;170:10:101;162:5;;:18;;;;;;;;;;;;;;;;;;641:8586:35;;;;;;",
+  "deployedSourceMap": "641:8586:35:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;641:8586:35;1031:66;1027:1;1014:15;1010:88;1493:66;1483:8;1480:80;1477:2;;;1789;1783:9;1835:42;1827:6;1823:55;1816:5;1809:70;1919:15;1914:2;1907:5;1903:14;1896:39;2047:2;2040:5;2030:20;2024:27;2017:35;2014:2;;;2153:66;2150:1;2143:77;2252:66;2248:2;2241:78;2351:66;2347:2;2340:78;2450:1;2446:2;2439:13;2483:3;2480:1;2473:14;2014:2;6445;6441:1;6428:15;6424:24;6411:38;6741:66;6738:1;6731:77;7046:2;7042;7039:1;7026:23;7551:2;7488:1;7433:3;7368:1;7310;7240:5;7185:3;7159:459;8361:1;8357;8351:8;8348:15;8319:2;8303:14;8300:22;8271:114;8234:14;8227:22;8203:200;8194:7;8190:214;8179:225;;8424:7;8421:2;;;8464:1;8461;8454:12;8421:2;8586:66;8583:1;8576:77;8681:66;8677:2;8670:78;8776:66;8772:2;8765:78;8871:1;8867:2;8860:13;8900:3;8897:1;8890:14;1477:2;8996:1;8993;8986:12;1145:320:37;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1145:320:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;1030:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1030:28:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1579:547;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1579:547:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;91:20:101;;8:9:-1;5:2;;;30:1;27;20:12;5:2;91:20:101;;;;;;;;;;;;;;;;;;;;;;;;;;;2299:643:37;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2299:643:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9112:113:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9112:113:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;981:43:37;;8:9:-1;5:2;;;30:1;27;20:12;5:2;981:43:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3039:138;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3039:138:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;3039:138:37;;;;;;;;;;;;;;;;;333:167:101;;8:9:-1;5:2;;;30:1;27;20:12;5:2;333:167:101;;;;;;;;;;;;;;;;;;;;;;;;;;;;1145:320:37;259:5:101;;;;;;;;;;;245:19;;:10;:19;;;224:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1262:10:37;:18;1273:6;1262:18;;;;;;;;;;;;;;;;;;;;;;;;;1261:19;1240:91;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1363:4;1342:10;:18;1353:6;1342:18;;;;;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;1377:11;1394:6;1377:24;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1377:24:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1447:10;1416:42;;1439:6;1416:42;;;;;;;;;;;;1145:320;:::o;1030:28::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1579:547::-;1814:9;259:5:101;;;;;;;;;;;245:19;;:10;:19;;;224:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1698:10:37;:18;1709:6;1698:18;;;;;;;;;;;;;;;;;;;;;;;;;1677:86;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1781:10;:18;1792:6;1781:18;;;;;;;;;;;;;;;;1774:25;;;;;;;;;;;1826:1;1814:13;;1809:252;1833:11;:18;;;;1829:1;:22;1809:252;;;1894:6;1876:24;;:11;1888:1;1876:14;;;;;;;;;;;;;;;;;;;;;;;;;;;:24;;;1872:179;;;1937:11;1970:1;1949:11;:18;;;;:22;1937:35;;;;;;;;;;;;;;;;;;;;;;;;;;;1920:11;1932:1;1920:14;;;;;;;;;;;;;;;;;;:52;;;;;;;;;;;;;;;;;;2012:1;1990:11;:23;;;;;;;;;;;;;;:::i;:::-;;2031:5;;1872:179;1853:3;;;;;;;1809:252;;;2108:10;2075:44;;2100:6;2075:44;;;;;;;;;;;;1579:547;;:::o;91:20:101:-;;;;;;;;;;;;;:::o;2299:643:37:-;259:5:101;;;;;;;;;;;245:19;;:10;:19;;;224:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2462:10:37;:18;2473:6;2462:18;;;;;;;;;;;;;;;;;;;;;;;;;2441:86;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2566:11;:18;;;;2558:5;:26;2537:92;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2682:6;2660:28;;:11;2672:5;2660:18;;;;;;;;;;;;;;;;;;;;;;;;;;;:28;;;2639:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2759:10;:18;2770:6;2759:18;;;;;;;;;;;;;;;;2752:25;;;;;;;;;;;2808:11;2841:1;2820:11;:18;;;;:22;2808:35;;;;;;;;;;;;;;;;;;;;;;;;;;;2787:11;2799:5;2787:18;;;;;;;;;;;;;;;;;;:56;;;;;;;;;;;;;;;;;;2875:1;2853:11;:23;;;;;;;;;;;;;;:::i;:::-;;2924:10;2891:44;;2916:6;2891:44;;;;;;;;;;;;2299:643;;:::o;9112:113:35:-;9181:6;760:32;;;;;;;;;;;;;;;;;;;9203:15;;9112:113;:::o;981:43:37:-;;;;;;;;;;;;;;;;;;;;;;:::o;3039:138::-;3120:9;3159:11;3152:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3039:138;:::o;333:167:101:-;259:5;;;;;;;;;;;245:19;;:10;:19;;;224:85;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;449:1;429:22;;:8;:22;;;;425:69;;;475:8;467:5;;:16;;;;;;;;;;;;;;;;;;425:69;333:167;:::o;641:8586:35:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "/*\n\n  Copyright 2018 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\npragma solidity 0.4.24;\n\nimport \"./MixinAuthorizable.sol\";\n\n\ncontract ERC20Proxy is\n    MixinAuthorizable\n{\n    // Id of this proxy.\n    bytes4 constant internal PROXY_ID = bytes4(keccak256(\"ERC20Token(address)\"));\n    \n    // solhint-disable-next-line payable-fallback\n    function () \n        external\n    {\n        assembly {\n            // The first 4 bytes of calldata holds the function selector\n            let selector := and(calldataload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)\n\n            // `transferFrom` will be called with the following parameters:\n            // assetData Encoded byte array.\n            // from Address to transfer asset from.\n            // to Address to transfer asset to.\n            // amount Amount of asset to transfer.\n            // bytes4(keccak256(\"transferFrom(bytes,address,address,uint256)\")) = 0xa85e59e4\n            if eq(selector, 0xa85e59e400000000000000000000000000000000000000000000000000000000) {\n\n                // To lookup a value in a mapping, we load from the storage location keccak256(k, p),\n                // where k is the key left padded to 32 bytes and p is the storage slot\n                let start := mload(64)\n                mstore(start, and(caller, 0xffffffffffffffffffffffffffffffffffffffff))\n                mstore(add(start, 32), authorized_slot)\n\n                // Revert if authorized[msg.sender] == false\n                if iszero(sload(keccak256(start, 64))) {\n                    // Revert with `Error(\"SENDER_NOT_AUTHORIZED\")`\n                    mstore(0, 0x08c379a000000000000000000000000000000000000000000000000000000000)\n                    mstore(32, 0x0000002000000000000000000000000000000000000000000000000000000000)\n                    mstore(64, 0x0000001553454e4445525f4e4f545f415554484f52495a454400000000000000)\n                    mstore(96, 0)\n                    revert(0, 100)\n                }\n\n                // `transferFrom`.\n                // The function is marked `external`, so no abi decodeding is done for\n                // us. Instead, we expect the `calldata` memory to contain the\n                // following:\n                //\n                // | Area     | Offset | Length  | Contents                            |\n                // |----------|--------|---------|-------------------------------------|\n                // | Header   | 0      | 4       | function selector                   |\n                // | Params   |        | 4 * 32  | function parameters:                |\n                // |          | 4      |         |   1. offset to assetData (*)        |\n                // |          | 36     |         |   2. from                           |\n                // |          | 68     |         |   3. to                             |\n                // |          | 100    |         |   4. amount                         |\n                // | Data     |        |         | assetData:                          |\n                // |          | 132    | 32      | assetData Length                    |\n                // |          | 164    | **      | assetData Contents                  |\n                //\n                // (*): offset is computed from start of function parameters, so offset\n                //      by an additional 4 bytes in the calldata.\n                //\n                // (**): see table below to compute length of assetData Contents\n                //\n                // WARNING: The ABIv2 specification allows additional padding between\n                //          the Params and Data section. This will result in a larger\n                //          offset to assetData.\n\n                // Asset data itself is encoded as follows:\n                //\n                // | Area     | Offset | Length  | Contents                            |\n                // |----------|--------|---------|-------------------------------------|\n                // | Header   | 0      | 4       | function selector                   |\n                // | Params   |        | 1 * 32  | function parameters:                |\n                // |          | 4      | 12 + 20 |   1. token address                  |\n\n                // We construct calldata for the `token.transferFrom` ABI.\n                // The layout of this calldata is in the table below.\n                //\n                // | Area     | Offset | Length  | Contents                            |\n                // |----------|--------|---------|-------------------------------------|\n                // | Header   | 0      | 4       | function selector                   |\n                // | Params   |        | 3 * 32  | function parameters:                |\n                // |          | 4      |         |   1. from                           |\n                // |          | 36     |         |   2. to                             |\n                // |          | 68     |         |   3. amount                         |\n\n                /////// Read token address from calldata ///////\n                // * The token address is stored in `assetData`.\n                //\n                // * The \"offset to assetData\" is stored at offset 4 in the calldata (table 1).\n                //   [assetDataOffsetFromParams = calldataload(4)]\n                //\n                // * Notes that the \"offset to assetData\" is relative to the \"Params\" area of calldata;\n                //   add 4 bytes to account for the length of the \"Header\" area (table 1).\n                //   [assetDataOffsetFromHeader = assetDataOffsetFromParams + 4]\n                //\n                // * The \"token address\" is offset 32+4=36 bytes into \"assetData\" (tables 1 & 2).\n                //   [tokenOffset = assetDataOffsetFromHeader + 36 = calldataload(4) + 4 + 36]\n                let token := calldataload(add(calldataload(4), 40))\n                \n                /////// Setup Header Area ///////\n                // This area holds the 4-byte `transferFrom` selector.\n                // Any trailing data in transferFromSelector will be\n                // overwritten in the next `mstore` call.\n                mstore(0, 0x23b872dd00000000000000000000000000000000000000000000000000000000)\n                \n                /////// Setup Params Area ///////\n                // We copy the fields `from`, `to` and `amount` in bulk\n                // from our own calldata to the new calldata.\n                calldatacopy(4, 36, 96)\n\n                /////// Call `token.transferFrom` using the calldata ///////\n                let success := call(\n                    gas,            // forward all gas\n                    token,          // call address of token contract\n                    0,              // don't send any ETH\n                    0,              // pointer to start of input\n                    100,            // length of input\n                    0,              // write output over input\n                    32              // output size should be 32 bytes\n                )\n\n                /////// Check return data. ///////\n                // If there is no return data, we assume the token incorrectly\n                // does not return a bool. In this case we expect it to revert\n                // on failure, which was handled above.\n                // If the token does return data, we require that it is a single\n                // nonzero 32 bytes value.\n                // So the transfer succeeded if the call succeeded and either\n                // returned nothing, or returned a non-zero 32 byte value. \n                success := and(success, or(\n                    iszero(returndatasize),\n                    and(\n                        eq(returndatasize, 32),\n                        gt(mload(0), 0)\n                    )\n                ))\n                if success {\n                    return(0, 0)\n                }\n                \n                // Revert with `Error(\"TRANSFER_FAILED\")`\n                mstore(0, 0x08c379a000000000000000000000000000000000000000000000000000000000)\n                mstore(32, 0x0000002000000000000000000000000000000000000000000000000000000000)\n                mstore(64, 0x0000000f5452414e534645525f4641494c454400000000000000000000000000)\n                mstore(96, 0)\n                revert(0, 100)\n            }\n\n            // Revert if undefined function is called\n            revert(0, 0)\n        }\n    }\n\n    /// @dev Gets the proxy id associated with the proxy address.\n    /// @return Proxy id.\n    function getProxyId()\n        external\n        pure\n        returns (bytes4)\n    {\n        return PROXY_ID;\n    }\n}\n",
+  "sourcePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/AssetProxy/ERC20Proxy.sol",
+  "ast": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/AssetProxy/ERC20Proxy.sol",
+    "exportedSymbols": {
+      "ERC20Proxy": [
+        8246
+      ]
+    },
+    "id": 8247,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8222,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "580:23:35"
+      },
+      {
+        "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/AssetProxy/MixinAuthorizable.sol",
+        "file": "./MixinAuthorizable.sol",
+        "id": 8223,
+        "nodeType": "ImportDirective",
+        "scope": 8247,
+        "sourceUnit": 8470,
+        "src": "605:33:35",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 8224,
+              "name": "MixinAuthorizable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8469,
+              "src": "668:17:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MixinAuthorizable_$8469",
+                "typeString": "contract MixinAuthorizable"
+              }
+            },
+            "id": 8225,
+            "nodeType": "InheritanceSpecifier",
+            "src": "668:17:35"
+          }
+        ],
+        "contractDependencies": [
+          8469,
+          8537,
+          8589,
+          16316,
+          16364
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 8246,
+        "linearizedBaseContracts": [
+          8246,
+          8469,
+          8589,
+          8537,
+          16364,
+          16316
+        ],
+        "name": "ERC20Proxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 8232,
+            "name": "PROXY_ID",
+            "nodeType": "VariableDeclaration",
+            "scope": 8246,
+            "src": "717:76:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes4",
+              "typeString": "bytes4"
+            },
+            "typeName": {
+              "id": 8226,
+              "name": "bytes4",
+              "nodeType": "ElementaryTypeName",
+              "src": "717:6:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes4",
+                "typeString": "bytes4"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "4552433230546f6b656e286164647265737329",
+                      "id": 8229,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "770:21:35",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_f47261b06eedbfce68afd46d0f3c27c60b03faad319eaf33103611cf8f6456ad",
+                        "typeString": "literal_string \"ERC20Token(address)\""
+                      },
+                      "value": "ERC20Token(address)"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_stringliteral_f47261b06eedbfce68afd46d0f3c27c60b03faad319eaf33103611cf8f6456ad",
+                        "typeString": "literal_string \"ERC20Token(address)\""
+                      }
+                    ],
+                    "id": 8228,
+                    "name": "keccak256",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 16622,
+                    "src": "760:9:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                      "typeString": "function () pure returns (bytes32)"
+                    }
+                  },
+                  "id": 8230,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "functionCall",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "760:32:35",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                ],
+                "id": 8227,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "nodeType": "ElementaryTypeNameExpression",
+                "src": "753:6:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_bytes4_$",
+                  "typeString": "type(bytes4)"
+                },
+                "typeName": "bytes4"
+              },
+              "id": 8231,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "753:40:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes4",
+                "typeString": "bytes4"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 8236,
+              "nodeType": "Block",
+              "src": "888:8126:35",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "authorized_slot": {
+                        "declaration": 8296,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1919:15:35",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 8235,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let selector := and(calldataload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)\n    if eq(selector, 0xa85e59e400000000000000000000000000000000000000000000000000000000)\n    {\n        let start := mload(64)\n        mstore(start, and(caller(), 0xffffffffffffffffffffffffffffffffffffffff))\n        mstore(add(start, 32), authorized_slot)\n        if iszero(sload(keccak256(start, 64)))\n        {\n            mstore(0, 0x08c379a000000000000000000000000000000000000000000000000000000000)\n            mstore(32, 0x0000002000000000000000000000000000000000000000000000000000000000)\n            mstore(64, 0x0000001553454e4445525f4e4f545f415554484f52495a454400000000000000)\n            mstore(96, 0)\n            revert(0, 100)\n        }\n        let token := calldataload(add(calldataload(4), 40))\n        mstore(0, 0x23b872dd00000000000000000000000000000000000000000000000000000000)\n        calldatacopy(4, 36, 96)\n        let success := call(gas(), token, 0, 0, 100, 0, 32)\n        success := and(success, or(iszero(returndatasize()), and(eq(returndatasize(), 32), gt(mload(0), 0))))\n        if success\n        {\n            return(0, 0)\n        }\n        mstore(0, 0x08c379a000000000000000000000000000000000000000000000000000000000)\n        mstore(32, 0x0000002000000000000000000000000000000000000000000000000000000000)\n        mstore(64, 0x0000000f5452414e534645525f4641494c454400000000000000000000000000)\n        mstore(96, 0)\n        revert(0, 100)\n    }\n    revert(0, 0)\n}",
+                  "src": "898:8116:35"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8237,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8233,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "863:2:35"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 8234,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "888:0:35"
+            },
+            "scope": 8246,
+            "src": "854:8160:35",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 8244,
+              "nodeType": "Block",
+              "src": "9193:32:35",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 8242,
+                    "name": "PROXY_ID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 8232,
+                    "src": "9210:8:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "functionReturnParameters": 8241,
+                  "id": 8243,
+                  "nodeType": "Return",
+                  "src": "9203:15:35"
+                }
+              ]
+            },
+            "documentation": "@dev Gets the proxy id associated with the proxy address.\n @return Proxy id.",
+            "id": 8245,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getProxyId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8238,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9131:2:35"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 8241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8240,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8245,
+                  "src": "9181:6:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 8239,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9181:6:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9180:8:35"
+            },
+            "scope": 8246,
+            "src": "9112:113:35",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8247,
+        "src": "641:8586:35"
+      }
+    ],
+    "src": "580:8648:35"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/AssetProxy/ERC20Proxy.sol",
+    "exportedSymbols": {
+      "ERC20Proxy": [
+        8246
+      ]
+    },
+    "id": 8247,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8222,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "580:23:35"
+      },
+      {
+        "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/protocol/AssetProxy/MixinAuthorizable.sol",
+        "file": "./MixinAuthorizable.sol",
+        "id": 8223,
+        "nodeType": "ImportDirective",
+        "scope": 8247,
+        "sourceUnit": 8470,
+        "src": "605:33:35",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 8224,
+              "name": "MixinAuthorizable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8469,
+              "src": "668:17:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MixinAuthorizable_$8469",
+                "typeString": "contract MixinAuthorizable"
+              }
+            },
+            "id": 8225,
+            "nodeType": "InheritanceSpecifier",
+            "src": "668:17:35"
+          }
+        ],
+        "contractDependencies": [
+          8469,
+          8537,
+          8589,
+          16316,
+          16364
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 8246,
+        "linearizedBaseContracts": [
+          8246,
+          8469,
+          8589,
+          8537,
+          16364,
+          16316
+        ],
+        "name": "ERC20Proxy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 8232,
+            "name": "PROXY_ID",
+            "nodeType": "VariableDeclaration",
+            "scope": 8246,
+            "src": "717:76:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes4",
+              "typeString": "bytes4"
+            },
+            "typeName": {
+              "id": 8226,
+              "name": "bytes4",
+              "nodeType": "ElementaryTypeName",
+              "src": "717:6:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes4",
+                "typeString": "bytes4"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "arguments": [
+                    {
+                      "argumentTypes": null,
+                      "hexValue": "4552433230546f6b656e286164647265737329",
+                      "id": 8229,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "string",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "770:21:35",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_stringliteral_f47261b06eedbfce68afd46d0f3c27c60b03faad319eaf33103611cf8f6456ad",
+                        "typeString": "literal_string \"ERC20Token(address)\""
+                      },
+                      "value": "ERC20Token(address)"
+                    }
+                  ],
+                  "expression": {
+                    "argumentTypes": [
+                      {
+                        "typeIdentifier": "t_stringliteral_f47261b06eedbfce68afd46d0f3c27c60b03faad319eaf33103611cf8f6456ad",
+                        "typeString": "literal_string \"ERC20Token(address)\""
+                      }
+                    ],
+                    "id": 8228,
+                    "name": "keccak256",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 16622,
+                    "src": "760:9:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
+                      "typeString": "function () pure returns (bytes32)"
+                    }
+                  },
+                  "id": 8230,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "functionCall",
+                  "lValueRequested": false,
+                  "names": [],
+                  "nodeType": "FunctionCall",
+                  "src": "760:32:35",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                ],
+                "id": 8227,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "nodeType": "ElementaryTypeNameExpression",
+                "src": "753:6:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_bytes4_$",
+                  "typeString": "type(bytes4)"
+                },
+                "typeName": "bytes4"
+              },
+              "id": 8231,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "753:40:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes4",
+                "typeString": "bytes4"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 8236,
+              "nodeType": "Block",
+              "src": "888:8126:35",
+              "statements": [
+                {
+                  "externalReferences": [
+                    {
+                      "authorized_slot": {
+                        "declaration": 8296,
+                        "isOffset": false,
+                        "isSlot": true,
+                        "src": "1919:15:35",
+                        "valueSize": 1
+                      }
+                    }
+                  ],
+                  "id": 8235,
+                  "nodeType": "InlineAssembly",
+                  "operations": "{\n    let selector := and(calldataload(0), 0xffffffff00000000000000000000000000000000000000000000000000000000)\n    if eq(selector, 0xa85e59e400000000000000000000000000000000000000000000000000000000)\n    {\n        let start := mload(64)\n        mstore(start, and(caller(), 0xffffffffffffffffffffffffffffffffffffffff))\n        mstore(add(start, 32), authorized_slot)\n        if iszero(sload(keccak256(start, 64)))\n        {\n            mstore(0, 0x08c379a000000000000000000000000000000000000000000000000000000000)\n            mstore(32, 0x0000002000000000000000000000000000000000000000000000000000000000)\n            mstore(64, 0x0000001553454e4445525f4e4f545f415554484f52495a454400000000000000)\n            mstore(96, 0)\n            revert(0, 100)\n        }\n        let token := calldataload(add(calldataload(4), 40))\n        mstore(0, 0x23b872dd00000000000000000000000000000000000000000000000000000000)\n        calldatacopy(4, 36, 96)\n        let success := call(gas(), token, 0, 0, 100, 0, 32)\n        success := and(success, or(iszero(returndatasize()), and(eq(returndatasize(), 32), gt(mload(0), 0))))\n        if success\n        {\n            return(0, 0)\n        }\n        mstore(0, 0x08c379a000000000000000000000000000000000000000000000000000000000)\n        mstore(32, 0x0000002000000000000000000000000000000000000000000000000000000000)\n        mstore(64, 0x0000000f5452414e534645525f4641494c454400000000000000000000000000)\n        mstore(96, 0)\n        revert(0, 100)\n    }\n    revert(0, 0)\n}",
+                  "src": "898:8116:35"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8237,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8233,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "863:2:35"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 8234,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "888:0:35"
+            },
+            "scope": 8246,
+            "src": "854:8160:35",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 8244,
+              "nodeType": "Block",
+              "src": "9193:32:35",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 8242,
+                    "name": "PROXY_ID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 8232,
+                    "src": "9210:8:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "functionReturnParameters": 8241,
+                  "id": 8243,
+                  "nodeType": "Return",
+                  "src": "9203:15:35"
+                }
+              ]
+            },
+            "documentation": "@dev Gets the proxy id associated with the proxy address.\n @return Proxy id.",
+            "id": 8245,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getProxyId",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8238,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9131:2:35"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 8241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8240,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8245,
+                  "src": "9181:6:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 8239,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9181:6:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9180:8:35"
+            },
+            "scope": 8246,
+            "src": "9112:113:35",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8247,
+        "src": "641:8586:35"
+      }
+    ],
+    "src": "580:8648:35"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-16T20:38:35.327Z"
+}

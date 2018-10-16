@@ -1,0 +1,871 @@
+{
+  "contractName": "LibForwarderErrors",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a723058209fc0a20580aaa2fd9a84e92e259ebf49a6b221a7f9f61307d6febe578dc9dbd40029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058209fc0a20580aaa2fd9a84e92e259ebf49a6b221a7f9f61307d6febe578dc9dbd40029",
+  "sourceMap": "729:1328:28:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;729:1328:28;;;;;;;",
+  "deployedSourceMap": "729:1328:28:-;;;;;",
+  "source": "/*\n\n  Copyright 2018 ZeroEx Intl.\n\n  Licensed under the Apache License, Version 2.0 (the \"License\");\n  you may not use this file except in compliance with the License.\n  You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n  Unless required by applicable law or agreed to in writing, software\n  distributed under the License is distributed on an \"AS IS\" BASIS,\n  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  See the License for the specific language governing permissions and\n  limitations under the License.\n\n*/\n\n// solhint-disable\npragma solidity 0.4.24;\n\n\n/// This contract is intended to serve as a reference, but is not actually used for efficiency reasons.\ncontract LibForwarderErrors {\n    string constant FEE_PERCENTAGE_TOO_LARGE = \"FEE_PROPORTION_TOO_LARGE\";                        // Provided fee percentage greater than 5%.\n    string constant INSUFFICIENT_ETH_REMAINING = \"INSUFFICIENT_ETH_REMAINING\";                    // Not enough ETH remaining to pay feeRecipient.\n    string constant OVERSOLD_WETH = \"OVERSOLD_WETH\";                                              // More WETH sold than provided with current message call.\n    string constant COMPLETE_FILL_FAILED = \"COMPLETE_FILL_FAILED\";                                // Desired purchase amount not completely filled (required for ZRX fees only).\n    string constant TRANSFER_FAILED = \"TRANSFER_FAILED\";                                          // Asset transfer failed.\n    string constant UNSUPPORTED_ASSET_PROXY = \"UNSUPPORTED_ASSET_PROXY\";                          // Proxy in assetData not supported.\n    string constant DEFAULT_FUNCTION_WETH_CONTRACT_ONLY = \"DEFAULT_FUNCTION_WETH_CONTRACT_ONLY\";  // Fallback function may only be used for WETH withdrawals.\n    string constant INVALID_MSG_VALUE = \"INVALID_MSG_VALUE\";                                      // msg.value must be greater than 0.\n    string constant INVALID_AMOUNT = \"INVALID_AMOUNT\";                                            // Amount must equal 1.\n}\n",
+  "sourcePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/extensions/Forwarder/libs/LibForwarderErrors.sol",
+  "ast": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/extensions/Forwarder/libs/LibForwarderErrors.sol",
+    "exportedSymbols": {
+      "LibForwarderErrors": [
+        6436
+      ]
+    },
+    "id": 6437,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6408,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "599:23:28"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "This contract is intended to serve as a reference, but is not actually used for efficiency reasons.",
+        "fullyImplemented": true,
+        "id": 6436,
+        "linearizedBaseContracts": [
+          6436
+        ],
+        "name": "LibForwarderErrors",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 6411,
+            "name": "FEE_PERCENTAGE_TOO_LARGE",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "763:69:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6409,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "763:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4645455f50524f504f5254494f4e5f544f4f5f4c41524745",
+              "id": 6410,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "806:26:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_68024eac1652a3ea7e8c343d324714635d46e41aad216c04055e91d87e434323",
+                "typeString": "literal_string \"FEE_PROPORTION_TOO_LARGE\""
+              },
+              "value": "FEE_PROPORTION_TOO_LARGE"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6414,
+            "name": "INSUFFICIENT_ETH_REMAINING",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "905:73:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6412,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "905:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "494e53554646494349454e545f4554485f52454d41494e494e47",
+              "id": 6413,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "950:28:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_ae39df654a885ee96f4641fd23162ac88175f690dbf057c589340ef317137639",
+                "typeString": "literal_string \"INSUFFICIENT_ETH_REMAINING\""
+              },
+              "value": "INSUFFICIENT_ETH_REMAINING"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6417,
+            "name": "OVERSOLD_WETH",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1052:47:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6415,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1052:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4f564552534f4c445f57455448",
+              "id": 6416,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1084:15:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_1ccd96629c97e6df2a860f5f90bc1c009bdba64a5839a8f607f8467b8d3bb6ce",
+                "typeString": "literal_string \"OVERSOLD_WETH\""
+              },
+              "value": "OVERSOLD_WETH"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6420,
+            "name": "COMPLETE_FILL_FAILED",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1209:61:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6418,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1209:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "434f4d504c4554455f46494c4c5f4641494c4544",
+              "id": 6419,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1248:22:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_aae5a7eb3098e0a0dc774ac77440ee5ebf5d476a59bb53a7158952be939063b6",
+                "typeString": "literal_string \"COMPLETE_FILL_FAILED\""
+              },
+              "value": "COMPLETE_FILL_FAILED"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6423,
+            "name": "TRANSFER_FAILED",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1386:51:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6421,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1386:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "5452414e534645525f4641494c4544",
+              "id": 6422,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1420:17:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_8bf8f0d780f13740660fe63233b17f96cb1813889e7dce4121e55b817b367b72",
+                "typeString": "literal_string \"TRANSFER_FAILED\""
+              },
+              "value": "TRANSFER_FAILED"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6426,
+            "name": "UNSUPPORTED_ASSET_PROXY",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1510:67:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6424,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1510:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "554e535550504f525445445f41535345545f50524f5859",
+              "id": 6425,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1552:25:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_5c3483d6ed04a07104ff8446d002a4e74838994bb75934fc73a6f3cae316fd29",
+                "typeString": "literal_string \"UNSUPPORTED_ASSET_PROXY\""
+              },
+              "value": "UNSUPPORTED_ASSET_PROXY"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6429,
+            "name": "DEFAULT_FUNCTION_WETH_CONTRACT_ONLY",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1645:91:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6427,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1645:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "44454641554c545f46554e4354494f4e5f574554485f434f4e54524143545f4f4e4c59",
+              "id": 6428,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1699:37:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_0cc9bf4faf622a1362a1d14338142fd645785098c5eecee047f0eab89d8d5b48",
+                "typeString": "literal_string \"DEFAULT_FUNCTION_WETH_CONTRACT_ONLY\""
+              },
+              "value": "DEFAULT_FUNCTION_WETH_CONTRACT_ONLY"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6432,
+            "name": "INVALID_MSG_VALUE",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1803:55:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6430,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1803:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "494e56414c49445f4d53475f56414c5545",
+              "id": 6431,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1839:19:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_164553f84a991fb8350e72fdfdd6151dfe0e2c514239f1c94cbcde7ce9aac5b7",
+                "typeString": "literal_string \"INVALID_MSG_VALUE\""
+              },
+              "value": "INVALID_MSG_VALUE"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6435,
+            "name": "INVALID_AMOUNT",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1938:49:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6433,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1938:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "494e56414c49445f414d4f554e54",
+              "id": 6434,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1971:16:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_eb6dbbf3194e9f4dd39c8dabe51ddb59ca6ad00c50b1bc74675ce4b263687722",
+                "typeString": "literal_string \"INVALID_AMOUNT\""
+              },
+              "value": "INVALID_AMOUNT"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6437,
+        "src": "729:1328:28"
+      }
+    ],
+    "src": "599:1459:28"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/facu/Documents/Laburo/Spiking/Ethereum/0x/0x-monorepo/packages/contracts/contracts/2.0.0/extensions/Forwarder/libs/LibForwarderErrors.sol",
+    "exportedSymbols": {
+      "LibForwarderErrors": [
+        6436
+      ]
+    },
+    "id": 6437,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6408,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "599:23:28"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "This contract is intended to serve as a reference, but is not actually used for efficiency reasons.",
+        "fullyImplemented": true,
+        "id": 6436,
+        "linearizedBaseContracts": [
+          6436
+        ],
+        "name": "LibForwarderErrors",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 6411,
+            "name": "FEE_PERCENTAGE_TOO_LARGE",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "763:69:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6409,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "763:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4645455f50524f504f5254494f4e5f544f4f5f4c41524745",
+              "id": 6410,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "806:26:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_68024eac1652a3ea7e8c343d324714635d46e41aad216c04055e91d87e434323",
+                "typeString": "literal_string \"FEE_PROPORTION_TOO_LARGE\""
+              },
+              "value": "FEE_PROPORTION_TOO_LARGE"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6414,
+            "name": "INSUFFICIENT_ETH_REMAINING",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "905:73:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6412,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "905:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "494e53554646494349454e545f4554485f52454d41494e494e47",
+              "id": 6413,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "950:28:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_ae39df654a885ee96f4641fd23162ac88175f690dbf057c589340ef317137639",
+                "typeString": "literal_string \"INSUFFICIENT_ETH_REMAINING\""
+              },
+              "value": "INSUFFICIENT_ETH_REMAINING"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6417,
+            "name": "OVERSOLD_WETH",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1052:47:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6415,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1052:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4f564552534f4c445f57455448",
+              "id": 6416,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1084:15:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_1ccd96629c97e6df2a860f5f90bc1c009bdba64a5839a8f607f8467b8d3bb6ce",
+                "typeString": "literal_string \"OVERSOLD_WETH\""
+              },
+              "value": "OVERSOLD_WETH"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6420,
+            "name": "COMPLETE_FILL_FAILED",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1209:61:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6418,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1209:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "434f4d504c4554455f46494c4c5f4641494c4544",
+              "id": 6419,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1248:22:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_aae5a7eb3098e0a0dc774ac77440ee5ebf5d476a59bb53a7158952be939063b6",
+                "typeString": "literal_string \"COMPLETE_FILL_FAILED\""
+              },
+              "value": "COMPLETE_FILL_FAILED"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6423,
+            "name": "TRANSFER_FAILED",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1386:51:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6421,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1386:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "5452414e534645525f4641494c4544",
+              "id": 6422,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1420:17:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_8bf8f0d780f13740660fe63233b17f96cb1813889e7dce4121e55b817b367b72",
+                "typeString": "literal_string \"TRANSFER_FAILED\""
+              },
+              "value": "TRANSFER_FAILED"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6426,
+            "name": "UNSUPPORTED_ASSET_PROXY",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1510:67:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6424,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1510:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "554e535550504f525445445f41535345545f50524f5859",
+              "id": 6425,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1552:25:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_5c3483d6ed04a07104ff8446d002a4e74838994bb75934fc73a6f3cae316fd29",
+                "typeString": "literal_string \"UNSUPPORTED_ASSET_PROXY\""
+              },
+              "value": "UNSUPPORTED_ASSET_PROXY"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6429,
+            "name": "DEFAULT_FUNCTION_WETH_CONTRACT_ONLY",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1645:91:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6427,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1645:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "44454641554c545f46554e4354494f4e5f574554485f434f4e54524143545f4f4e4c59",
+              "id": 6428,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1699:37:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_0cc9bf4faf622a1362a1d14338142fd645785098c5eecee047f0eab89d8d5b48",
+                "typeString": "literal_string \"DEFAULT_FUNCTION_WETH_CONTRACT_ONLY\""
+              },
+              "value": "DEFAULT_FUNCTION_WETH_CONTRACT_ONLY"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6432,
+            "name": "INVALID_MSG_VALUE",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1803:55:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6430,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1803:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "494e56414c49445f4d53475f56414c5545",
+              "id": 6431,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1839:19:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_164553f84a991fb8350e72fdfdd6151dfe0e2c514239f1c94cbcde7ce9aac5b7",
+                "typeString": "literal_string \"INVALID_MSG_VALUE\""
+              },
+              "value": "INVALID_MSG_VALUE"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": true,
+            "id": 6435,
+            "name": "INVALID_AMOUNT",
+            "nodeType": "VariableDeclaration",
+            "scope": 6436,
+            "src": "1938:49:28",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_memory",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 6433,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "1938:6:28",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "494e56414c49445f414d4f554e54",
+              "id": 6434,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "1971:16:28",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_eb6dbbf3194e9f4dd39c8dabe51ddb59ca6ad00c50b1bc74675ce4b263687722",
+                "typeString": "literal_string \"INVALID_AMOUNT\""
+              },
+              "value": "INVALID_AMOUNT"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6437,
+        "src": "729:1328:28"
+      }
+    ],
+    "src": "599:1459:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-16T20:38:35.305Z"
+}
